@@ -1,0 +1,48 @@
+# CentOS-Base.repo
+#
+# The mirror system uses the connecting IP address of the client and the
+# update status of each mirror to pick yum that are updated to and
+# geographically close to the client.  You should use this for CentOS updates
+# unless you are manually picking other yum.
+#
+# If the mirrorlist= does not work for you, as a fall back you can try the 
+# remarked out baseurl= line instead.
+#
+#
+ 
+[base]
+name=CentOS-$releasever - Base - yum.jcloud.com
+baseurl=http://yum.jcloud.com/centos/$releasever/os/$basearch/
+        http://yum.jdcloud.com/centos/$releasever/os/$basearch/
+gpgcheck=0
+gpgkey=http://yum.jcloud.com/centos/RPM-GPG-KEY-CentOS-7
+ 
+[updates]
+name=CentOS-$releasever - Updates - yum.jcloud.com
+baseurl=http://yum.jcloud.com/centos/$releasever/updates/$basearch/
+	http://yum.jdcloud.com/centos/$releasever/updates/$basearch/
+gpgcheck=0
+gpgkey=http://yum.jcloud.com/centos/RPM-GPG-KEY-CentOS-7
+ 
+[extras]
+name=CentOS-$releasever - Extras - yum.jcloud.com
+baseurl=http://yum.jcloud.com/centos/$releasever/extras/$basearch/
+	http://yum.jdcloud.com/centos/$releasever/extras/$basearch/
+gpgcheck=0
+gpgkey=http://yum.jcloud.com/centos/RPM-GPG-KEY-CentOS-7
+ 
+[centosplus]
+name=CentOS-$releasever - Plus - yum.jcloud.com
+baseurl=http://yum.jcloud.com/centos/$releasever/centosplus/$basearch/
+	http://yum.jdcloud.com/centos/$releasever/centosplus/$basearch/
+gpgcheck=0
+enabled=0
+gpgkey=http://yum.jcloud.com/centos/RPM-GPG-KEY-CentOS-7
+ 
+[contrib]
+name=CentOS-$releasever - Contrib - yum.jcloud.com
+baseurl=http://yum.jcloud.com/centos/$releasever/contrib/$basearch/
+	http://yum.jdcloud.com/centos/$releasever/contrib/$basearch/
+gpgcheck=0
+enabled=0
+gpgkey=http://yum.jcloud.com/centos/RPM-GPG-KEY-CentOS-7

@@ -1,19 +1,22 @@
-#通过shell脚本创建hadoop用户
+#创建hadoop用户
 class base::user_hadoop {
-	file { "/root/create_hadoop.sh":
-                ensure  =>  "present",
-                owner   =>  "root",
-                group   =>  "root",
-                mode    =>  "0755",
-		source  =>  "puppet:///modules/base/create_hadoop.sh",
-        }
-
-	exec { "sh /root/create_hadoop.sh":
-		user   => "root",
-		cwd    => "/tmp",
-		path   => "/usr/bin:/usr/sbin:/sbin:/bin",
-		provider => "shell",
-		unless => "cat /etc/passwd | grep hadoop",
-		timeout => "60",
+	group { "hadoop":
+                gid     => "1000",
+                ensure  => "present",
 	}
+	user {"hadoop":
+                uid     => "1000",
+                gid     => "1000",
+                ensure  => "present",
+                home    => "/home/hadoop",
+                shell   => "/bin/bash",
+                managehome => "true",
+        }
+        file {"/home/hadoop/.ssh":
+                ensure =>  "directory",
+                owner  =>  "hadoop",
+                group  =>  "hadoop",
+                mode   =>  "0700",
+		backup =>  main,
+        }
 }
