@@ -1,0 +1,16 @@
+#切割inotify.log日志文件
+#参考系统日志切割频率
+#inotify用于收集文件变更日志
+
+/var/log/inotify/inotify.log
+/export/Logs/system/inotify.log
+{
+    rotate 1
+    missingok
+    sharedscripts
+    notifempty
+    postrotate
+        /usr/bin/systemctl daemon-reload &&  /usr/bin/systemctl restart inotify-monitor
+    endscript
+}
+

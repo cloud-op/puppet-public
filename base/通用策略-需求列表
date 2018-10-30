@@ -1,0 +1,29 @@
+需求列表
+
+1、创建hadoop用户、admin用户、dev用户，设置gid、uid及home路径确保各类用户账号存在且UID/GID全局一致
+2、确保sshd、crond、ntpd服务正常运行，且开机自启
+3、通过rpm包安装jdk，确保所有机器的jdk版本一致
+4、清空iptables列表，默认情况下不添加任何内容
+5、配置yum安装源，保证网络连通性可用，且yum源能提供足够多的安装包
+6、package安装各类工具包
+   lrzsz、tree、cronolog、logrotate、bash-completion、nagios-plugins-all、iftop、fping、vim-enhanced
+   ftp、lftp、gcc、bind-utils、man、sysstat、traceroute、lsof、strace、blktrace、perf、dstat、tcpdump
+   rsync、htop、mysql、procps、psmisc、sed、grep、wget、curl、gawk、rsyslog、inotify-tools、pcre、git
+   readline-devel、snappy、lzo、time、nethogs
+7、关闭swap分区，避免Java类服务使用swap降低性能
+8、安装ifrit
+9、管理limits.conf文件
+	hadoop  soft nofile  327680
+	hadoop  hard nofile  327680
+	hadoop  soft nproc  327680
+	hadoop  hard nproc  327680
+	hadoop  soft   memlock    unlimited
+	hadoop  hard   memlock    unlimited
+10、统一管理ntp.conf文件，配置server端校正时间
+11、安装rsyslog-agent用于日志收集
+12、收集系统日志
+13、收集history操作历史日志
+14、收集文件变更日志
+15、修改sysctl.conf文件，修改fs.inotify.max_user_watches参数，默认值太小，导致inotifywait无法启动成功
+16、修改sysctl.conf文件，降低磁盘写缓存的阈值
+17、修改sysctl.conf文件，降低flush到磁盘时的延迟

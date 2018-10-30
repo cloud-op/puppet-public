@@ -1,0 +1,21 @@
+[Unit]
+Description=inotify monitor file change
+
+[Service]
+User=nobody
+Type=forking
+Environment=SYSTEMD_LOG_LEVEL=debug
+EnvironmentFile=/etc/sysconfig/inotify.conf
+ExecStart=/usr/bin/inotifywait -mr -d -s  --timefmt "%Y-%%m-%d %%H:%M:%S" \
+             --format "%T %e %w%%f" -e modify,move,create,delete \
+             -o '$INOTIFY_LOG' --exclude '$EXCLUDE_OPTION' --fromfile '$INCLUDE_FILE'
+ExecReload=/bin/kill -HUP $MAINPID
+MemoryLimit=200M
+CPUQuota=50%
+LimitFSIZE=50000000
+KillMode=mixed
+Restart=always
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target graphic.target   

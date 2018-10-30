@@ -1,0 +1,14 @@
+#切割history.log日志文件
+#参考系统日志切割频率
+/var/log/history.log
+/export/Logs/system/history.log
+{
+    rotate 1
+    missingok
+    sharedscripts
+    notifempty
+    postrotate
+	/usr/bin/systemctl restart rsyslog
+    endscript
+}
+

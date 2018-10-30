@@ -1,0 +1,16 @@
+#切割history.log日志
+#参考了系统日志的切割频率
+
+/var/log/history.log
+/export/Logs/system/history.log
+{
+    weekly
+    rotate 4
+    missingok
+    sharedscripts
+    compress
+    notifempty
+    postrotate
+       /bin/kill -HUP `cat /var/run/syslogd.pid 2> /dev/null` 2> /dev/null || true
+    endscript
+}

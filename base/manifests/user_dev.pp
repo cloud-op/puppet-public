@@ -1,4 +1,6 @@
-#创建dev用户
+#创建dev用户,uid为1002
+#用户组为dev，gid为1002
+#创建dev用户的home路径/home/dev/.ssh
 class base::user_dev {
 	group { "dev":
                 gid     => "1002",

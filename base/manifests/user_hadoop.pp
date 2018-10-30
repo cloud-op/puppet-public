@@ -1,4 +1,6 @@
-#创建hadoop用户
+#创建hadoop用户,uid为1000
+#用户组hadoop，gid为1000
+#创建hadoop用户的home路径/home/hadoop/.ssh
 class base::user_hadoop {
 	group { "hadoop":
                 gid     => "1000",
