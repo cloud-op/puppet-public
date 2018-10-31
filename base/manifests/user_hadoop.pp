@@ -6,6 +6,7 @@ class base::user_hadoop {
                 gid     => "1000",
                 ensure  => "present",
 	}
+	
 	user {"hadoop":
                 uid     => "1000",
                 gid     => "1000",
@@ -14,6 +15,7 @@ class base::user_hadoop {
                 shell   => "/bin/bash",
                 managehome => "true",
         }
+	
         file {"/home/hadoop/.ssh":
                 ensure =>  "directory",
                 owner  =>  "hadoop",
