@@ -1,4 +1,6 @@
-#关闭所有交换设备
+#关闭机器的交换分区
+#该命令可以直接操作，操作系统会自行处理
+#执行完毕后，执行free 命令，可以看到swap的大小，total为0
 class base::swapoff {
 	exec {
 		"swapoff -a":
