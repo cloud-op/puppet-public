@@ -12,7 +12,7 @@ class base::swapoff {
 		cwd      => "/tmp",
 		path     => "/usr/bin:/usr/sbin:/sbin:/bin",
 		provider => "shell",
-		timeout  => "120",
+		timeout  => "60",
 		onlyif   => "grep partition /proc/swaps";
 	}
 }

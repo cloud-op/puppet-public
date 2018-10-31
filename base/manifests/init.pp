@@ -1,3 +1,4 @@
+#说明：base模块入口文件
 class base {
 	include base::user_hadoop
 	include base::yum_repo
