@@ -2,6 +2,7 @@
 #策略说明：业界当前服务器内存基本都是64G起步，因此swap分区的存在，更多的是增添服务隐患，降低性能，在BAT这样的公司中，SWAP分区默认是关闭状态
 #策略风险：无；该命令可以直接操作，操作系统会自行处理，因此不用担心目前swap分区存储数据的问题
 #策略验证：执行完毕后，执行free 命令，可以看到swap的大小，total为0
+#使用说明：timeout设置为120s，默认可以涵盖绝大部分情况，如果依然超时，可以将该时间调大
 #case记录：
 
 class base::swapoff {
@@ -11,7 +12,7 @@ class base::swapoff {
 		cwd      => "/tmp",
 		path     => "/usr/bin:/usr/sbin:/sbin:/bin",
 		provider => "shell",
-		timeout  => "60",
+		timeout  => "120",
 		onlyif   => "grep partition /proc/swaps";
 	}
 }
