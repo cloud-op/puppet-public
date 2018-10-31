@@ -7,7 +7,7 @@
 
 class base::yum_repo {
 	file{
-       		"/etc/yum.repos.d/epel.repo":
+		"/etc/yum.repos.d/epel.repo":
         	owner  => "root",
         	group  => "root",
         	mode   => "0644",
