@@ -28,13 +28,5 @@ class base::var_log {
                 timeout  => "120",
                 unless   => "[ -f /export/servers/rsyslog-agent/etc/rsyslog.d/11-input-cron.conf ]";
 
-		#收集ifrit
-		'bash control generate_agent_config ifrit "/export/servers/ifrit/var/log/\*/\*.log" ':
-		user     => "root",
-                cwd      => "/export/servers/rsyslog-agent/bin/",
-                path     => "/usr/bin:/usr/sbin:/sbin:/bin",
-                provider => "shell",
-                timeout  => "120",
-                unless   => "[ -f /export/servers/rsyslog-agent/etc/rsyslog.d/11-input-ifrit.conf ]";
 	}
 }	
