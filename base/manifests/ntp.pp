@@ -20,7 +20,7 @@ class base::ntp {
             refreshonly => "true",
         }
 	
-	exec {"ntpdate hbntp.jcloud.com":
+	exec {"ntpdate 0.cn.pool.ntp.org":
             user      => "root",
             cwd       => "/tmp",
             path      => "/usr/bin:/usr/sbin:/sbin:/bin",
