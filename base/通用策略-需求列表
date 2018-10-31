@@ -11,7 +11,7 @@
    rsync、htop、mysql、procps、psmisc、sed、grep、wget、curl、gawk、rsyslog、inotify-tools、pcre、git
    readline-devel、snappy、lzo、time、nethogs
 7、关闭swap分区，避免Java类服务使用swap降低性能
-8、安装ifrit
+8、安装ifrit（下线，该功能外部客户不需要使用）
 9、管理limits.conf文件
 	hadoop  soft nofile  327680
 	hadoop  hard nofile  327680
