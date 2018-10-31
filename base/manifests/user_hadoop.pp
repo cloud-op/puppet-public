@@ -21,6 +21,6 @@ class base::user_hadoop {
                 owner  =>  "hadoop",
                 group  =>  "hadoop",
                 mode   =>  "0700",
-		backup =>  main,
+                backup =>  main,
         }
 }
