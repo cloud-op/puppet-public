@@ -3,7 +3,7 @@
 class base::jdk {
 	#creates返回值为1即/root/jdk-8u172-linux-x64.rpm不存在时下载安装包，下载动作执行后触发MD5值校验
 	exec {
-	    "wget http://storage-jd-local-jcloud-admin.proxy.jd.com/saas-op/jdk-8u172-linux-x64.rpm":
+	    "wget http://xxx.xxx.com/saas-op/jdk-8u172-linux-x64.rpm":
 	    user     => "root",
             cwd      => "/root/",
             creates  => "/root/jdk-8u172-linux-x64.rpm",
