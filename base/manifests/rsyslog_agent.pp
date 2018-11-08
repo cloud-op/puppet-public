@@ -1,8 +1,8 @@
-#策略用途：安装rsyslog-agent用于收集日志
-#策略说明：启动rsyslog收集日志
-#策略风险：
-#策略验证：
-#使用说明：
+#策略用途： 安装rsyslog-agent用于收集日志
+#策略说明： 启动rsyslog收集日志
+#策略风险： 已做了系统资源限制， 如果失效，可能会消耗大量cpu
+#策略验证： 查看rsyslog-agent进程是否启动，配置文件是否正确
+#使用说明： 仅适用于centos-7机器
 #case记录：
 
 class base::rsyslog_agent {

@@ -1,8 +1,8 @@
 #策略用途：统一管理ntp.conf文件
 #策略说明：当ntp.conf文件有更新时，同步此文件，然后停止ntpd服务，ntpdate修正时间，启动ntpd服务
-#策略风险：
-#策略验证：
-#使用说明：
+#策略风险：ntp server配置错误会导致时间更新失败
+#策略验证：使用date查看时间是否符合预期
+#使用说明：设置可访问ntp server
 #case记录：
 
 class base::ntp {

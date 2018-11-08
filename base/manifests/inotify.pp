@@ -1,9 +1,9 @@
-#策略用途：安装inotify-monitor,同步配置文件，并重启服务，收集文件变更日志
-#策略说明：
-#策略风险：
-#策略验证：
-#使用说明：仅适用于centos-7机器
-#case记录：
+#策略用途： 安装inotify-monitor,同步配置文件，并重启服务，收集文件变更日志
+#策略说明： 通过inotify， 将系统中出现变化的文件记录到日志中
+#策略风险： 已做了系统资源限制， 如果失效，可能会消耗大量cpu，硬盘
+#策略验证： 查看inotify-monitor.service是否存在， inotifywait进程是否存在
+#使用说明： 仅适用于centos-7机器
+#case记录： 
 
 class base::inotify {
 	if $operatingsystemmajrelease == '7' {
