@@ -1,8 +1,8 @@
 #策略用途：启停服务
 #策略说明：指定的服务确保运行状态以及设置为开机自启动
-#策略风险：
-#策略验证：
-#使用说明：
+#策略风险：无。
+#策略验证：service 服务名 status 如果参数active为active（running）为启动，如果是inactive(dead)为未启动
+#使用说明：如果设置开机自启动，enable为true
 #case记录：
 
 class base::service {
