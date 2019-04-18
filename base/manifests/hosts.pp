@@ -1,10 +1,4 @@
-class jdstack::hosts {
-    host 
-        { 'puppet.cloud.com':
-           ensure => present,
-           ip => "10.1.0.1",
-        }
-
+class base::hosts {
     host 
         { 'test.jdcloud.com':
            ensure => present,
