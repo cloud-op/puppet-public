@@ -1,6 +1,8 @@
 常见问题：
 用户创建和UID/GID设置：
+   1，如果已经存在了Uid/gid，通过Puppet设置则不会生效
    Error: Could not set gid on group[admin]: Execution of '/usr/sbin/groupmod -g 1000 admin' returned 4: groupmod: GID '1000' already exists
+   2，如果已经存在了对应的用户，但是Uid/gid不符合预期，则可以修改生效
    Notice: /Stage[main]/Jdstack::User_admin/Group[admin]/gid: gid changed 1001 to 2000
    Notice: /Stage[main]/Jdstack::User_admin/User[admin]/uid: uid changed 1000 to 2000
    Notice: /Stage[main]/Jdstack::User_admin/File[/home/admin/.ssh]/group: group changed 1001 to 'admin'
