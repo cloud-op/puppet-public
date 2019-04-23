@@ -1,0 +1,2 @@
+常见问题：
+1，Error: Could not set gid on group[admin]: Execution of '/usr/sbin/groupmod -g 1000 admin' returned 4: groupmod: GID '1000' already exists
