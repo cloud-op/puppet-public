@@ -1,2 +1,6 @@
 常见问题：
-1，Error: Could not set gid on group[admin]: Execution of '/usr/sbin/groupmod -g 1000 admin' returned 4: groupmod: GID '1000' already exists
+用户创建和UID/GID设置：
+   Error: Could not set gid on group[admin]: Execution of '/usr/sbin/groupmod -g 1000 admin' returned 4: groupmod: GID '1000' already exists
+   Notice: /Stage[main]/Jdstack::User_admin/Group[admin]/gid: gid changed 1001 to 2000
+   Notice: /Stage[main]/Jdstack::User_admin/User[admin]/uid: uid changed 1000 to 2000
+   Notice: /Stage[main]/Jdstack::User_admin/File[/home/admin/.ssh]/group: group changed 1001 to 'admin'
