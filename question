@@ -9,3 +9,11 @@
    3，进程已经在运行
    Notice: Run of Puppet configuration client already in progress; skipping  (/opt/puppetlabs/puppet/cache/state/agent_catalog_run.lock exists)
 
+
+常见错误：
+1，pp文件的后缀必须是.pp
+2，site.pp中 include abc::ef，那么pp文件必须命名为ef.pp，且ef.pp文件内页必须称之为class  abc::ef，保持完全一致
+3，pp文件里面的标点符号是否变成了中文符号
+4，master上是否有客户端主机名重复的问题
+5，一个文件下发后的权限如果要求是0600，而在服务端也这样设置，那么puppet以puppet账号运行，可能就无法获取该文件，从而导致下发失败
+6，pp文件的组织，以file类型为例，每个file都需要file{}来组织，不要在一个file{}中包含多个文件，这样会报错
