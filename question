@@ -6,3 +6,6 @@
    Notice: /Stage[main]/Jdstack::User_admin/Group[admin]/gid: gid changed 1001 to 2000
    Notice: /Stage[main]/Jdstack::User_admin/User[admin]/uid: uid changed 1000 to 2000
    Notice: /Stage[main]/Jdstack::User_admin/File[/home/admin/.ssh]/group: group changed 1001 to 'admin'
+   3，进程已经在运行
+   Notice: Run of Puppet configuration client already in progress; skipping  (/opt/puppetlabs/puppet/cache/state/agent_catalog_run.lock exists)
+
